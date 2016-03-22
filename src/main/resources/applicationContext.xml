@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-2.5.xsd
-        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+    <!-- **************  MVC 配置 **************** -->
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/images/**" location="/images/" order="2"></mvc:resources>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:contentType="text/html;charset=utf-8"
+          p:prefix="/WEB-INF/view/"
+          p:suffix=".jsp"/>
+    <!-- **************  MVC 配置 **************** -->
+
+    <!-- 设置注解 -->
     <context:annotation-config />
+    <!-- 包扫描 -->
     <context:component-scan base-package="com.example.*" />
-    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-            p:viewClass="org.springframework.web.servlet.view.JstlView"
-            p:prefix="/WEB-INF/view/" p:suffix=".jsp" />
-
-
+    <!-- 扫描配置文件 -->
     <context:property-placeholder location="classpath*:*.properties" />
 
-    <!-- ************** DataSource: dbcp 数据库配置**************** -->
+
+
+
+    <!-- ************** DataSource: dbcp 数据库配置 **************** -->
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close" lazy-init="false">
@@ -32,7 +43,7 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <!-- *********事物管理************** -->
+    <!-- ********* 事物管理 ************** -->
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
@@ -53,8 +64,10 @@
             <tx:method name="*" propagation="REQUIRED" rollback-for="Exception" />
         </tx:attributes>
     </tx:advice>
-
+    <!-- ********* 事物管理 ************** -->
+    <!-- ********* JDBC ************** -->
     <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+    <!-- ********* JDBC ************** -->
 </beans>

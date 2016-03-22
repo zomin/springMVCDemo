@@ -1,4 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%--
+  Created by IntelliJ IDEA.
+  User: zhan005
+  Date: 2016-03-22
+  Time: 16:58
+  To change this template use File | Settings | File Templates.
+--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
@@ -7,12 +13,3 @@
             +":"+request.getServerPort()+path+"/";
 %>
 <c:set var="base" value="<%=basePath%>"/>
-<html>
-<body>
-
-<h2>Hello World!</h2>
-<c:out value="/login?userId=1"></c:out>
-base:${base}
-<a href="/login?userId=1">Login</a>
-</body>
-</html>
