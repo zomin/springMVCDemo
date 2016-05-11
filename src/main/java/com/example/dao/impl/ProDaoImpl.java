@@ -1,7 +1,7 @@
 package com.example.dao.impl;
 
-import com.example.dao.ExampleDao;
-import com.example.model.User;
+import com.example.dao.ProDao;
+import com.example.model.Pro;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,28 +14,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by zhan005 on 2016-03-18. Time:11:50 desc:
+ * Created by zhan005 on 2016/5/11.
  */
 @Repository
-public class ExampleDaoImpl implements ExampleDao {
-    private static final String TAG = "ExampleDaoImpl";
+public class ProDaoImpl implements ProDao {
+    private static final String TAG = "ProDaoImpl";
     private final Logger LOG = LogManager.getLogger(TAG);
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public User get(String userId) {
-        String sql = "select * from user where userId = ?";
-        final User user = new User();
-        jdbcTemplate.query(sql,new Object[]{userId}, new RowCallbackHandler() {
+    public Pro find(String sysId) {
+        String sql = "select * from Pro where userId=?";
+        Pro pro = new Pro();
+        jdbcTemplate.query(sql,new Object[]{sysId}, new RowCallbackHandler() {
             @Override
             public void processRow(ResultSet resultSet) throws SQLException {
-                user.setUserId(resultSet.getString("userId"));
-                user.setUserEmail(resultSet.getString("userEmail"));
-                user.setUserName(resultSet.getString("userName"));
+                pro.setUserId(resultSet.getString("userId"));
+                pro.setJsonString(resultSet.getString("jsonString"));
+                pro.setDataTime(resultSet.getDate("dataTime"));
+                pro.setFlag(resultSet.getInt("flag"));
             }
         });
-        return user;
+        return pro;
     }
 }
