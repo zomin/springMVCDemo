@@ -7,4 +7,6 @@ import com.example.model.Pro;
  */
 public interface ProService {
     Pro get(String sysId);
+
+    String sayHello(String msg);
 }

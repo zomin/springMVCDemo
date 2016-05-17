@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by zhan005 on 2016/5/11.
  */
-@Service
+@Service("proService")
 public class ProServiceImpl implements ProService {
     private static final String TAG = "ProServiceImpl";
     private static final Logger LOG = LogManager.getLogger(ProServiceImpl.class);
@@ -27,5 +27,10 @@ public class ProServiceImpl implements ProService {
         Pro pro = proDao.find(sysId);
 
         return pro;
+    }
+
+    @Override
+    public String sayHello(String msg){
+        return "say:"+msg;
     }
 }

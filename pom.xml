@@ -121,13 +121,6 @@
       <version>${commons.version}</version>
     </dependency>
 
-    <!-- slf4j
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.12</version>
-    </dependency> -->
-
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -145,14 +138,6 @@
         <artifactId>log4j-web</artifactId>
         <version>2.5</version>
     </dependency>
-
-    <!-- log4j-slf4j-impl （用于log4j2与slf4j集成）
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-slf4j-impl</artifactId>
-      <version>2.5</version>
-    </dependency> -->
-
 
     <dependency>
       <groupId>org.apache.commons</groupId>
@@ -178,7 +163,32 @@
       <version>${druid.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.5.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.4.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.sgroschupf</groupId>
+      <artifactId>zkclient</artifactId>
+      <version>0.1</version>
+    </dependency>
   </dependencies>
+
+
   <build>
     <finalName>springDemo</finalName>
     <plugins>
