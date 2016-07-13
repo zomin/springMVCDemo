@@ -205,14 +205,16 @@
       <artifactId>gson</artifactId>
       <version>2.7</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.taobao.sdk</groupId>-->
-      <!--<artifactId>taobao</artifactId>-->
-      <!--<version>1.0.0</version>-->
-      <!--<scope>system</scope>-->
-      <!--<systemPath>${basedir}/lib/taobao-sdk-java-auto_1468217694549-20160711.jar</systemPath>-->
-    <!--</dependency>-->
-
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>taobao-sdk-java</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.10</version>
+    </dependency>
   </dependencies>
 
 

@@ -9,7 +9,7 @@ public class RegisterRequest {
     private String mix_user_id;
     private String taobao_nick;
     private String mobile;
-    private String extend;
+    private Extend extend;
 
     public String getSeller_name() {
         return seller_name;
@@ -51,11 +51,11 @@ public class RegisterRequest {
         this.mobile = mobile;
     }
 
-    public String getExtend() {
+    public Extend getExtend() {
         return extend;
     }
 
-    public void setExtend(String extend) {
+    public void setExtend(Extend extend) {
         this.extend = extend;
     }
 }

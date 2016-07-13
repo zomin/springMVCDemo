@@ -6,7 +6,7 @@ package com.example.entry;
 public class Member {
     private int point;
     private int level;
-    private String extend;
+    private Extend extend;
     private String mobile;
 
     public int getPoint() {
@@ -25,11 +25,11 @@ public class Member {
         this.level = level;
     }
 
-    public String getExtend() {
+    public Extend getExtend() {
         return extend;
     }
 
-    public void setExtend(String extend) {
+    public void setExtend(Extend extend) {
         this.extend = extend;
     }
 

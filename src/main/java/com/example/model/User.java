@@ -1,7 +1,6 @@
 package com.example.model;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 /**
  * Created by zhan005 on 2016-03-18. Time:11:56 desc:
@@ -9,153 +8,91 @@ import java.sql.Date;
 public class User implements Serializable{
     private static final String TAG = "User";
 
-    private Integer userSysId;
-    private String userId;
-    private String userEmail;
-    private String userPassword;
-    private Integer version;
-    private String userStatus;
-    private Date createTime;
-    private Date updateTime;
-    private String createOp;
-    private String updateOp;
-    private String userName;
-    private String userRemark;
+    private int userId;
+    private int point;
+    private int level;
+    private String email;
+    private String mobile;
+    private String taobaoNick;
+    private String mixMobile;
+    private String mixUserId;
 
     public User() {
 
     }
 
-    public User(Integer userSysId, String userId, String userEmail, String userPassword, Integer version, String userStatus, Date createTime, Date updateTime, String createOp, String updateOp, String userName, String userRemark) {
-        this.userSysId = userSysId;
+    public User(int userId,int point, int level, String email, String mobile, String taobaoNick, String mixMobile, String mixUserId) {
         this.userId = userId;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-        this.version = version;
-        this.userStatus = userStatus;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.createOp = createOp;
-        this.updateOp = updateOp;
-        this.userName = userName;
-        this.userRemark = userRemark;
+        this.point = point;
+        this.level = level;
+        this.email = email;
+        this.mobile = mobile;
+        this.taobaoNick = taobaoNick;
+        this.mixMobile = mixMobile;
+        this.mixUserId = mixUserId;
     }
 
-    public static String getTAG() {
-        return TAG;
-    }
-
-    public Integer getUserSysId() {
-        return userSysId;
-    }
-
-    public void setUserSysId(Integer userSysId) {
-        this.userSysId = userSysId;
-    }
-
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public int getPoint() {
+        return point;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setPoint(int point) {
+        this.point = point;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public int getLevel() {
+        return level;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setLevel(int level) {
+        this.level = level;
     }
 
-    public Integer getVersion() {
-        return version;
+    public String getEmail() {
+        return email;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUserStatus() {
-        return userStatus;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getTaobaoNick() {
+        return taobaoNick;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setTaobaoNick(String taobaoNick) {
+        this.taobaoNick = taobaoNick;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public String getMixMobile() {
+        return mixMobile;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setMixMobile(String mixMobile) {
+        this.mixMobile = mixMobile;
     }
 
-    public String getCreateOp() {
-        return createOp;
+    public String getMixUserId() {
+        return mixUserId;
     }
 
-    public void setCreateOp(String createOp) {
-        this.createOp = createOp;
-    }
-
-    public String getUpdateOp() {
-        return updateOp;
-    }
-
-    public void setUpdateOp(String updateOp) {
-        this.updateOp = updateOp;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserRemark() {
-        return userRemark;
-    }
-
-    public void setUserRemark(String userRemark) {
-        this.userRemark = userRemark;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userSysId=" + userSysId +
-                ", userId='" + userId + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", version=" + version +
-                ", userStatus='" + userStatus + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                ", createOp='" + createOp + '\'' +
-                ", updateOp='" + updateOp + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userRemark='" + userRemark + '\'' +
-                '}';
+    public void setMixUserId(String mixUserId) {
+        this.mixUserId = mixUserId;
     }
 }

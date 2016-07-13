@@ -7,7 +7,7 @@ public class BindResponse {
     private String success;
     private String bind_code;
     private String error_code;
-    private BindMember bindMember;
+    private BindMember member;
 
     public String getSuccess() {
         return success;
@@ -34,10 +34,10 @@ public class BindResponse {
     }
 
     public BindMember getBindMember() {
-        return bindMember;
+        return member;
     }
 
-    public void setBindMember(BindMember bindMember) {
-        this.bindMember = bindMember;
+    public void setBindMember(BindMember member) {
+        this.member = member;
     }
 }

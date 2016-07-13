@@ -7,7 +7,7 @@ public class QueryResponse {
     private String query_code;
     private String success;
     private String error_code;
-    private BindMember bindMember;
+    private BindMember member;
 
     public String getQuery_code() {
         return query_code;
@@ -34,10 +34,10 @@ public class QueryResponse {
     }
 
     public BindMember getBindMember() {
-        return bindMember;
+        return member;
     }
 
-    public void setBindMember(BindMember bindMember) {
-        this.bindMember = bindMember;
+    public void setBindMember(BindMember member) {
+        this.member = member;
     }
 }
