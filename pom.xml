@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <spring.version>4.1.1.RELEASE</spring.version>
+    <spring.version>5.2.7.RELEASE</spring.version>
     <commons.version>2.2</commons.version>
     <druid.version>1.0.20</druid.version>
   </properties>
